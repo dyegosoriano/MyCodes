@@ -1,123 +1,129 @@
-body{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: #EF0069;
-    /* background: linear-gradient(to right, #9610F0,#29ACEC); */
-    /* background: linear-gradient(to right, #EF0069,#9800E1); */
-    /* background: linear-gradient(90deg,#3d6dbc 0,#1f9eb2 53%,#07c6a9); */
-    /* background: linear-gradient(135deg,#50217f 1%,#366895); */
+body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #ef0069;
+
+  /* background: linear-gradient(to right, #9610F0,#29ACEC); */
+  /* background: linear-gradient(to right, #EF0069,#9800E1); */
+  /* background: linear-gradient(90deg,#3d6dbc 0,#1f9eb2 53%,#07c6a9); */
+  /* background: linear-gradient(135deg,#50217f 1%,#366895); */
 }
-.menu{
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    background: black;
+
+.menu {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+}
+
+.menu-activated {
+  animation: fadeIn 0.5s forwards;
+}
+
+.menu-disabled {
+  animation: fadeOut 0.5s forwards;
+}
+
+.toggle-menu {
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.toggle-menu span {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.toggle-menu span:nth-child(n + 2) {
+  margin-top: 7px;
+}
+
+.toggle-menu .active:nth-child(1) {
+  animation: anti-horario 0.5s forwards;
+}
+.toggle-menu .active:nth-child(2) {
+  animation: fadeOut 0.5s forwards;
+}
+.toggle-menu .active:nth-child(3) {
+  animation: horario 0.5s forwards;
+}
+.toggle-menu .deactivate:nth-child(1) {
+  animation: anti-horario-reverse 0.5s forwards;
+}
+.toggle-menu .deactivate:nth-child(2) {
+  animation: fadeIn 0.5s forwards;
+}
+.toggle-menu .deactivate:nth-child(3) {
+  animation: horario-reverse 0.5s forwards;
+}
+
+@keyframes anti-horario {
+  from {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+  to {
+    top: 9px;
+    transform: rotate(-135deg);
+  }
+}
+
+@keyframes anti-horario-reverse {
+  from {
+    top: 9px;
+    transform: rotate(-135deg);
+  }
+  to {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes horario {
+  from {
+    top: 0px;
+    transform: rotate(0);
+  }
+  to {
+    top: -9px;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes horario-reverse {
+  from {
+    top: -9px;
+    transform: rotate(135deg);
+  }
+  to {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-}
-.menu-activated{
-    animation: fadeIn .5s forwards;
-}
-.menu-disabled{
-    animation: fadeOut .5s forwards;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.toggle-menu{
-    margin: auto;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.toggle-menu span{
-    position: relative;
-    display: block;
-    width: 30px;
-    height: 2px;
-    border-radius: 100px;
-    background: #fff;
-}
-
-.toggle-menu span:nth-child(n+2){
-    margin-top: 7px;
-}
-
-.toggle-menu .active:nth-child(1){
-    animation: antihorario .5s forwards;
-}
-.toggle-menu .active:nth-child(2){
-    animation: fadeOut .5s forwards;
-}
-.toggle-menu .active:nth-child(3){
-    animation: horario .5s forwards;
-}
-.toggle-menu .deactivate:nth-child(1){
-    animation: antihorarioReverse .5s forwards;
-}
-.toggle-menu .deactivate:nth-child(2){
-    animation: fadeIn .5s forwards;
-}
-.toggle-menu .deactivate:nth-child(3){
-    animation: horarioReverse .5s forwards;
-}
-
-
-@keyframes antihorario{
-    from{
-        top: 0px;
-        transform: rotate(0deg)
-    }
-    to{
-        top: 9px;
-        transform: rotate(-135deg);
-    }
-}
-@keyframes antihorarioReverse{
-    from{
-        top: 9px;
-        transform: rotate(-135deg);
-    }
-    to{
-        top: 0px;
-        transform: rotate(0deg)
-    }
-}
-
-@keyframes horario{
-    from{
-        top: 0px;
-        transform: rotate(0);
-    }
-    to{
-        top: -9px;
-        transform: rotate(135deg);
-    }
-}
-@keyframes horarioReverse{
-    from{
-        top: -9px;
-        transform: rotate(135deg);
-    }
-    to{
-        top: 0px;
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-@keyframes fadeOut{
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-    }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

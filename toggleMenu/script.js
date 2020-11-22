@@ -1,23 +1,26 @@
-const toggleMenu = document.querySelector('.toggle-menu')
 const detailsButton = document.querySelectorAll('.toggle-menu span')
+const toggleMenu = document.querySelector('.toggle-menu')
 const menu = document.querySelector('.menu')
 
 toggleMenu.addEventListener('click', event => {
   event.preventDefault()
+  event.stopPropagation()
 
   detailsButton.forEach(span => {
-    span.classList.toggle('active')
-    if (!span.classList.contains('active')) {
-      span.classList.add('deactivate')
-    } else {
-      span.classList.remove('deactivate')
-    }
+    const spanClass = span.classList
+    spanClass.toggle('active')
+    const activeSpan = spanClass.contains('active')
+
+    !activeSpan
+      ? spanClass.add('deactivate')
+      : spanClass.remove('deactivate')
   })
 
-  menu.classList.toggle('menu-activated')
-  if (menu.classList.contains('menu-activated')) {
-    menu.classList.remove('menu-disabled')
-  } else {
-    menu.classList.add('menu-disabled')
-  }
+  const menuClass = menu.classList
+  menuClass.toggle('menu-activated')
+  const activeMenu = menuClass.contains('menu-activated')
+
+  activeMenu
+    ? menuClass.remove('menu-disabled')
+    : menuClass.add('menu-disabled')
 })
