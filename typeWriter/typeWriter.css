@@ -3,11 +3,12 @@ h1::after {
   opacity: 1;
   margin-left: 5px;
   display: inline-block;
-  animation: blink .7s infinite;
+  animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
