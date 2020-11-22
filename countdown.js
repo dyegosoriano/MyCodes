@@ -6,19 +6,11 @@
 
 export default class Countdown {
   constructor (futureDate) {
-    this.futureDate = futureDate
-  }
-
-  get _actualDate () {
-    return new Date()
-  }
-
-  get _futureDate () {
-    return new Date(this.futureDate)
+    this._futureDate = new Date(futureDate)
   }
 
   get _timeStampDiff () {
-    return this._futureDate.getTime() - this._actualDate.getTime()
+    return this._futureDate.getTime() - new Date().getTime()
   }
 
   get days () {
@@ -51,3 +43,6 @@ export default class Countdown {
     }
   }
 }
+
+const natal = new Countdown('25 December 2022 23:59:50 GMT-0300')
+console.log(natal.total)
