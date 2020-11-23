@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button, textarea {
+  font: 600 18px Roboto, sans-serif;
+  color: #fff;
+}
+
+body {
+  width: 100vw;
+}
+
+header {
+  width: 100vw;
+  position: fixed;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  height: 60px;
+  width: 100%;
+  max-width: 960px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 20px;
+  color: #222;
+}
+
+h2 {
+  font-size: 80px;
+  font-weight: 100;
+}
+
+.screens {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-1 {
+  background: #651fff;
+}
+
+.screen-2 {
+  background: #ff1744;
+}
+
+.screen-3 {
+  background: #00bfa5;
+}
+
+.screen-4 {
+  background: #ff3d00;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
