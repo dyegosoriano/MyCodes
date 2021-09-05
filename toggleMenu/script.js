@@ -11,16 +11,12 @@ toggleMenu.addEventListener('click', event => {
     spanClass.toggle('active')
     const activeSpan = spanClass.contains('active')
 
-    !activeSpan
-      ? spanClass.add('deactivate')
-      : spanClass.remove('deactivate')
+    !activeSpan ? spanClass.add('deactivate') : spanClass.remove('deactivate')
   })
 
   const menuClass = menu.classList
   menuClass.toggle('menu-activated')
   const activeMenu = menuClass.contains('menu-activated')
 
-  activeMenu
-    ? menuClass.remove('menu-disabled')
-    : menuClass.add('menu-disabled')
+  activeMenu ? menuClass.remove('menu-disabled') : menuClass.add('menu-disabled')
 })
